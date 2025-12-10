@@ -47,7 +47,7 @@ public class AlertsFramesWindowsPage {
     // --- ALERT methods ---
     public String handleSimpleAlert() {
     	NavigateToAlertPage();
-        FormUtilities.safeClick(driver, driver.findElement(alertButton)).click();
+        FormUtilities.safeClick(driver, driver.findElement(alertButton));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String text = alert.getText();
         alert.accept();
@@ -56,7 +56,7 @@ public class AlertsFramesWindowsPage {
 
     public String handleConfirmAlert(boolean accept) {
     	NavigateToAlertPage();
-		FormUtilities.safeClick(driver, driver.findElement(confirmButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(confirmButton));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String text = alert.getText();
         if (accept) alert.accept();
@@ -66,7 +66,7 @@ public class AlertsFramesWindowsPage {
 
     public String handlePromptAlert(String inputText) {
     	NavigateToAlertPage();
-		FormUtilities.safeClick(driver, driver.findElement(promptButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(promptButton));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.sendKeys(inputText);
         alert.accept();
@@ -85,15 +85,15 @@ public class AlertsFramesWindowsPage {
 
     // --- WINDOWS / TABS methods ---
     public void openNewTab() {
-		FormUtilities.safeClick(driver, driver.findElement(newTabButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(newTabButton));
     }
 
     public void openNewWindow() {
-		FormUtilities.safeClick(driver, driver.findElement(newWindowButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(newWindowButton));
     }
 
     public void openNewMessageWindow() {
-		FormUtilities.safeClick(driver, driver.findElement(messageWindowButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(messageWindowButton));
     }
 
     public void switchToWindowExcept(String parentWindow) {
@@ -111,21 +111,21 @@ public class AlertsFramesWindowsPage {
     }
     
 	public void NavigateToAlertsFramesWindowsModule() {
-		FormUtilities.safeClick(driver, driver.findElement(AlertsFramesWindowsModule)).click();
+		FormUtilities.safeClick(driver, driver.findElement(AlertsFramesWindowsModule));
 	}
 	
 	public void NavigateToAlertPage() {
 		NavigateToAlertsFramesWindowsModule();
-		FormUtilities.safeClick(driver, driver.findElement(alertPage)).click();
+		FormUtilities.safeClick(driver, driver.findElement(alertPage));
 	}
 	
 	public void NavigateToFramesPage() {
 		NavigateToAlertsFramesWindowsModule();
-		FormUtilities.safeClick(driver, driver.findElement(framesPage)).click();
+		FormUtilities.safeClick(driver, driver.findElement(framesPage));
 	}
 	
 	public void NavigateToBrowserWindowsPage() {
 		NavigateToAlertsFramesWindowsModule();
-		FormUtilities.safeClick(driver, driver.findElement(browserWindowsPage)).click();
+		FormUtilities.safeClick(driver, driver.findElement(browserWindowsPage));
 	}
 }
