@@ -1,0 +1,15 @@
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# Build output
+target/
+bin/
+
+# TestNG reports
+test-output/
+
+# OS generated files
+.DS_Store
+Thumbs.db
