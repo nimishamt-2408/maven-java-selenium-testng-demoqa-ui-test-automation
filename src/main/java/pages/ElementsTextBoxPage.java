@@ -10,6 +10,7 @@ import utilities.FormUtilities;
 public class ElementsTextBoxPage {
 	
 	WebDriver driver;
+	WebDriverWait wait;
 	
 	public ElementsTextBoxPage(WebDriver driver) {
 	    this.driver = driver;
