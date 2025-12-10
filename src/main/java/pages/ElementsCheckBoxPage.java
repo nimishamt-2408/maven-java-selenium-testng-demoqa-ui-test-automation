@@ -4,17 +4,14 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.FormUtilities;
 
 public class ElementsCheckBoxPage {
 	
 	WebDriver driver;
-	WebDriverWait wait;
 	
 	public ElementsCheckBoxPage(WebDriver driver) {	
 		this.driver = driver;
-	    this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
 	// ===========================
@@ -31,7 +28,7 @@ public class ElementsCheckBoxPage {
     // ===========================
 	
 	public String clickCheckBoxElement() {
-		wait.until(ExpectedConditions.elementToBeClickable(elementsModule)).click();
+		FormUtilities.safeClick(driver.findElement(elementsModule));
 		driver.findElement(checkBoxElement).click();
 		driver.findElement(homeCheckboxLabel).click();
 		
