@@ -7,6 +7,7 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -32,6 +33,10 @@ public class BaseClass {
 
 	@BeforeMethod
 	public void setUp() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("--window-size=1920,1080");
+		options.addArguments("--disable-gpu");
 		
 		// Initialize ExtentReports
         if (extent == null) {
@@ -42,7 +47,7 @@ public class BaseClass {
             extent.attachReporter(spark);
         }
         
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://demoqa.com/");
