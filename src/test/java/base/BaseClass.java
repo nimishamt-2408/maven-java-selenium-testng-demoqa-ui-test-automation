@@ -15,7 +15,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class BaseClass {
 	
-	protected WebDriver driver;
+    protected WebDriver driver;
     public static ExtentReports extent;
     public static ExtentTest test;
 	
@@ -30,7 +30,7 @@ public class BaseClass {
 	 *
 	 */
 
-	@BeforeClass
+	@BeforeMethod
 	public void setUp() {
 		
 		// Initialize ExtentReports
@@ -56,7 +56,7 @@ public class BaseClass {
 	 * - Uses a try/finally to ensure the driver reference is cleared even if quit() fails.
 	 * - Safe to call when driver is null.
 	 */
-	@AfterClass(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		if (driver != null) {
             try {
