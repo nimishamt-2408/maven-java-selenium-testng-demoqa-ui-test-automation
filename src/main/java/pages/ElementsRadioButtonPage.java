@@ -3,13 +3,18 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utilities.FormUtilities;
+import java.time.Duration;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ElementsRadioButtonPage {
 	
 	WebDriver driver;
+	WebDriverWait wait;
 
 	public ElementsRadioButtonPage(WebDriver driver) {
 		this.driver = driver;
+	    this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	// ===========================
@@ -26,10 +31,9 @@ public class ElementsRadioButtonPage {
 	// ===========================
 	
 	public String clickRadioButtonElement() {
-		FormUtilities.safeClick(driver.findElement(elementsModule));
-		driver.findElement(radioButtonElement).click();
-		driver.findElement(radioBtnLabel).click();
-
+		wait.until(ExpectedConditions.elementToBeClickable(elementsModule)).click();
+		FormUtilities.safeClick(driver, driver.findElement(radioButtonElement));
+		FormUtilities.safeClick(driver, driver.findElement(radioBtnLabel));
 		return driver.findElement(result).getText();
 	}
 }
