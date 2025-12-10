@@ -11,6 +11,7 @@ public class RadioButtonPageTests extends BaseClass {
 	
 	@Test
 	public void radioButtonTest() {
+		FormUtilities.removeAds(driver);
 		test = extent.createTest("Radio Button Test");
 
         try {

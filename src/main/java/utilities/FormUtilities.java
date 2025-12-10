@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -67,8 +68,19 @@ public class FormUtilities {
         try {
             element.click();
         } catch (Exception e) {
-            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
         }
+    }
+    
+    /**
+     * Removes Google Ads iframes from the current page
+     * @param driver WebDriver instance
+     */
+    public static void removeAds(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String script = "var ads = document.querySelectorAll('iframe[id^=\"google_ads_iframe\"]');" +
+                        "for(var i=0; i<ads.length; i++) { ads[i].remove(); }";
+        js.executeScript(script);
     }
 
     // Take screenshot

@@ -12,7 +12,7 @@ public class TextBoxPageTests extends BaseClass {
 	@Test
     public void fillTextBox() {
 		test = extent.createTest("Text Box Page Test");
-
+		FormUtilities.removeAds(driver);
         try {
         	
         	test.info("Filling Text Box form with user details...");

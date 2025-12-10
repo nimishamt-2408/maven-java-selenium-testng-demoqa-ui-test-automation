@@ -106,7 +106,7 @@ public class AlertsFramesWindowsTests extends BaseClass {
     @Test
     public void testWindowsTabs() {
     	test = extent.createTest("Test Windows & Tabs");
-    	
+    	FormUtilities.removeAds(driver);
     	try {
     		AlertsFramesWindowsPage page = new AlertsFramesWindowsPage(driver);
     		

@@ -12,7 +12,7 @@ public class CheckBoxPageTests extends BaseClass {
 	@Test
 	public void checkBoxTest() {
 		test = extent.createTest("CheckBox Test");
-
+		FormUtilities.removeAds(driver);
         try {
         	
 			ElementsCheckBoxPage cb = new ElementsCheckBoxPage(driver);

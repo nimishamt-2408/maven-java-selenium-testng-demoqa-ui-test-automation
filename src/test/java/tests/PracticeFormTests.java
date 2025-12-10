@@ -15,6 +15,7 @@ public class PracticeFormTests extends BaseClass {
                                      String gender, String mobile) {
 
     	test = extent.createTest("Practice Form Test - " + firstName + " " + lastName);
+    	FormUtilities.removeAds(driver);
     	
     	try {
             test.info("Starting test with data:");

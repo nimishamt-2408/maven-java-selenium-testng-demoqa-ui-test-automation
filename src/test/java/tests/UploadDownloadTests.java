@@ -41,6 +41,7 @@ public class UploadDownloadTests extends BaseClass {
     @Test
     public void testFileDownload() throws InterruptedException {
     	test = extent.createTest("Download Test - File Download");
+    	FormUtilities.removeAds(driver);
 
         try {
         	
