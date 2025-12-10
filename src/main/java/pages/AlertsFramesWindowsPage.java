@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.FormUtilities;
 
 import java.time.Duration;
 import java.util.Set;
@@ -46,7 +47,7 @@ public class AlertsFramesWindowsPage {
     // --- ALERT methods ---
     public String handleSimpleAlert() {
     	NavigateToAlertPage();
-        wait.until(ExpectedConditions.elementToBeClickable(alertButton)).click();
+        FormUtilities.safeClick(driver, driver.findElement(alertButton)).click();
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String text = alert.getText();
         alert.accept();
@@ -55,7 +56,7 @@ public class AlertsFramesWindowsPage {
 
     public String handleConfirmAlert(boolean accept) {
     	NavigateToAlertPage();
-        wait.until(ExpectedConditions.elementToBeClickable(confirmButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(confirmButton)).click();
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String text = alert.getText();
         if (accept) alert.accept();
@@ -65,7 +66,7 @@ public class AlertsFramesWindowsPage {
 
     public String handlePromptAlert(String inputText) {
     	NavigateToAlertPage();
-        wait.until(ExpectedConditions.elementToBeClickable(promptButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(promptButton)).click();
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.sendKeys(inputText);
         alert.accept();
@@ -84,15 +85,15 @@ public class AlertsFramesWindowsPage {
 
     // --- WINDOWS / TABS methods ---
     public void openNewTab() {
-        wait.until(ExpectedConditions.elementToBeClickable(newTabButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(newTabButton)).click();
     }
 
     public void openNewWindow() {
-        wait.until(ExpectedConditions.elementToBeClickable(newWindowButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(newWindowButton)).click();
     }
 
     public void openNewMessageWindow() {
-        wait.until(ExpectedConditions.elementToBeClickable(messageWindowButton)).click();
+		FormUtilities.safeClick(driver, driver.findElement(messageWindowButton)).click();
     }
 
     public void switchToWindowExcept(String parentWindow) {
@@ -110,21 +111,21 @@ public class AlertsFramesWindowsPage {
     }
     
 	public void NavigateToAlertsFramesWindowsModule() {
-		wait.until(ExpectedConditions.elementToBeClickable(AlertsFramesWindowsModule)).click();
+		FormUtilities.safeClick(driver, driver.findElement(AlertsFramesWindowsModule)).click();
 	}
 	
 	public void NavigateToAlertPage() {
 		NavigateToAlertsFramesWindowsModule();
-		wait.until(ExpectedConditions.elementToBeClickable(alertPage)).click();
+		FormUtilities.safeClick(driver, driver.findElement(alertPage)).click();
 	}
 	
 	public void NavigateToFramesPage() {
 		NavigateToAlertsFramesWindowsModule();
-		wait.until(ExpectedConditions.elementToBeClickable(framesPage)).click();
+		FormUtilities.safeClick(driver, driver.findElement(framesPage)).click();
 	}
 	
 	public void NavigateToBrowserWindowsPage() {
 		NavigateToAlertsFramesWindowsModule();
-		wait.until(ExpectedConditions.elementToBeClickable(browserWindowsPage)).click();
+		FormUtilities.safeClick(driver, driver.findElement(browserWindowsPage)).click();
 	}
 }
