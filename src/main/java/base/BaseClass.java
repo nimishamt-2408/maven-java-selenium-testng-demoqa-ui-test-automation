@@ -30,7 +30,7 @@ public class BaseClass {
 	 *
 	 */
 
-	@BeforeMethod
+	@BeforeClass
 	public void setUp() {
 		
 		// Initialize ExtentReports
@@ -56,7 +56,7 @@ public class BaseClass {
 	 * - Uses a try/finally to ensure the driver reference is cleared even if quit() fails.
 	 * - Safe to call when driver is null.
 	 */
-	@AfterMethod(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		if (driver != null) {
             try {
