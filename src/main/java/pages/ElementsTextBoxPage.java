@@ -1,25 +1,19 @@
 package pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import utilities.FormUtilities;
 
 public class ElementsTextBoxPage {
 	
 	WebDriver driver;
-	WebDriverWait wait;
-	JavascriptExecutor js;
 	
 	public ElementsTextBoxPage(WebDriver driver) {
 	    this.driver = driver;
 	    this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    this.js = (JavascriptExecutor) driver;
 	}
 	
 	// ===========================
@@ -41,8 +35,8 @@ public class ElementsTextBoxPage {
     // Actions
     // ===========================
 	public void navigateToTextBoxPage() {
-		FormUtilities.safeClick(driver.findElement((elementsModule));
-		driver.findElement(textBoxElement).click();
+		wait.until(ExpectedConditions.elementToBeClickable(elementsModule)).click();
+		FormUtilities.safeClick(driver, driver.findElement((textBoxElement));
     }
 	
 	public void enterUserName(String name) { 
