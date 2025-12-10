@@ -41,7 +41,7 @@ public class ElementsTextBoxPage {
     // Actions
     // ===========================
 	public void navigateToTextBoxPage() {
-		wait.until(ExpectedConditions.elementToBeClickable(elementsModule)).click();
+		FormUtilities.safeClick(driver.findElement((elementsModule));
 		driver.findElement(textBoxElement).click();
     }
 	
