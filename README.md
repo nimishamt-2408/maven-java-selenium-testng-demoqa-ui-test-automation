@@ -18,16 +18,33 @@ This project provides ready-to-run UI test scripts, reusable page objects, and r
 
 ## 🧰 Project Structure
 
-├── src
-│ ├── main/java # Framework utilities and helpers
-│ └── test/java # Test scripts
-├── screenshots # Captured screenshots of failed tests
-├── reports # TestNG HTML reports
-├── pom.xml # Maven dependencies
-└── testng.xml # TestNG suite configuration
+maven-java-selenium-testng-demoqa-ui-test-automation/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── config/           # Configuration classes (e.g., reading properties, environment setup)
+│   │   │   ├── pages/            # Page Object classes for DemoQA pages
+│   │   │   ├── utils/            # Utility classes (e.g., waits, screenshots, logging)
+│   │   │   └── drivers/          # WebDriver setup & management
+│   │   └── resources/
+│   │       └── config.properties # Configuration file (URLs, browser types, credentials)
+│
+├── src/
+│   └── test/
+│       ├── java/
+│       │   ├── tests/             # Test classes using TestNG
+│       │   ├── listeners/         # TestNG listeners (for logging, screenshots, reports)
+│       │   └── data/              # Test data classes or data providers
+│       └── resources/
+│           └── test-data/         # Excel/CSV/JSON test data files
+│
+├── reports/                        # TestNG HTML reports (generated)
+├── screenshots/                     # Screenshots captured on test failures
+├── pom.xml                          # Maven project dependencies & plugins
+├── testng.xml                       # TestNG suite configuration
+├── README.md                        # Project documentation
 
-
----
 
 ## 🚀 Getting Started
 
