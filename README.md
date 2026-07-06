@@ -12,8 +12,6 @@ This project provides ready-to-run UI test scripts, reusable page objects, and r
 - **TestNG Framework**: Organize and execute tests with suites, groups, and parallel execution.  
 - **Page Object Model (POM)**: Clean and maintainable test code structure.  
 - **Screenshots & Reports**: Automatic screenshots on failure and HTML test reports.  
-- **CI Integration**: Ready for GitHub Actions or other CI/CD pipelines.
-
 ---
 
 ## 🧰 Project Structure
